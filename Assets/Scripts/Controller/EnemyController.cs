@@ -6,6 +6,8 @@ public class EnemyController : IAEController
 {
     protected Transform ClosestTarget { get; private set; }
 
+    protected bool IsAttacking { get; set; }
+
     protected override void Awake()
     {
         base.Awake();

@@ -36,6 +36,7 @@ public class MonsterPool : ObjectPool
 
             for (int i = 0; i < enemiesPerSpawn; i++)
             {
+                //Debug.Log(GameManager.Instance.ObjectPool.pools.);
                 if(currentEnemies < pools.Count)
                 {
                     GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");

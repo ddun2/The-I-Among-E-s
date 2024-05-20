@@ -22,7 +22,7 @@ public class ObjectPool : MonoBehaviour
         PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (var pool in pools)
-        {
+        {            
             Queue<GameObject> queue = new Queue<GameObject>();
 
             for(int i=0; i<pool.size; i++)
