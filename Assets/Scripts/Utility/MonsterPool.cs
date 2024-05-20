@@ -6,7 +6,12 @@ public class MonsterPool : ObjectPool
 {
     [SerializeField] GameObject testMap;
     private Transform[] spawnPoint;
-    private int numberOfEnemiesPerSpawn;
+    // 적 생성 주기, 숫자, 최대 숫자
+    // TODO:: 스테이지에 따라 변경 가능하도록
+    public float spawnTime;
+    public int enemiesPerSpawn;
+    private int currentEnemies = 0;
+    
 
     private void Start()
     {
@@ -15,7 +20,7 @@ public class MonsterPool : ObjectPool
 
         // 동시에 생성되는 적의 수
         // TODO:: 스테이지에 따라 변경할 수 있도록하기
-        numberOfEnemiesPerSpawn = 5;
+        //enemiesPerSpawn = 5;
 
         StartCoroutine(SpawnMonster(pools.Count));
     }
@@ -26,13 +31,18 @@ public class MonsterPool : ObjectPool
     {
         while (true)
         {
-            for (int i = 0; i < numberOfEnemiesPerSpawn; i++)
-            {
-                GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
-                monster.transform.position = ReturnRandomPos();
-            }
+            // 일정 시간마다 스폰
+            yield return new WaitForSeconds(spawnTime);
 
-            yield return new WaitForSeconds(1f);
+            for (int i = 0; i < enemiesPerSpawn; i++)
+            {
+                if(currentEnemies < pools.Count)
+                {
+                    GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
+                    monster.transform.position = ReturnRandomPos();
+                    currentEnemies++;
+                }                
+            }
         }
     }
 
