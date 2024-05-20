@@ -17,7 +17,7 @@ public class MonsterPool : ObjectPool
     {
         // 미리 지정한 스폰 위치들을 받아옴
         spawnPoint = GameObject.Find("SpawnPoint").GetComponentsInChildren<Transform>();
-
+        
         // 동시에 생성되는 적의 수
         // TODO:: 스테이지에 따라 변경할 수 있도록하기
         //enemiesPerSpawn = 5;
@@ -35,14 +35,10 @@ public class MonsterPool : ObjectPool
             yield return new WaitForSeconds(spawnTime);
 
             for (int i = 0; i < enemiesPerSpawn; i++)
-            {
-                //Debug.Log(GameManager.Instance.ObjectPool.pools.);
-                if(currentEnemies < pools.Count)
-                {
-                    GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
-                    monster.transform.position = ReturnRandomPos();
-                    currentEnemies++;
-                }                
+            {             
+                GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
+                monster.transform.position = ReturnRandomPos();
+                currentEnemies++;
             }
         }
     }
@@ -54,8 +50,8 @@ public class MonsterPool : ObjectPool
     // TODO :: 3. 사방의 문에서 생성되도록 범위 지정하기
     // 스폰 포인트 지정?
     public Vector2 ReturnRandomPos()
-    {
-        int index = Random.Range(0, spawnPoint.Length);
+    {        
+        int index = Random.Range(1, spawnPoint.Length);
         Vector2 randomPos = new Vector2(spawnPoint[index].position.x, spawnPoint[index].position.y);
         
         return randomPos;
