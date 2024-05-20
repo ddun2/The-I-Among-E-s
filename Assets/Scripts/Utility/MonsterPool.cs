@@ -9,10 +9,10 @@ public class MonsterPool : ObjectPool
 
     private void Start()
     {
-        //mapCollider = testMap.GetComponent<BoxCollider2D>();
+        mapCollider = testMap.GetComponent<BoxCollider2D>();
         StartCoroutine(SpawnMonster(9));
-        //Vector2 pos = testMap.transform.position;
-        //Debug.Log(pos);
+        Vector2 pos = testMap.transform.position;
+        Debug.Log(pos);
     }
     
     // TODO :: 실제 스폰처리는 다른 곳에서 함
@@ -23,8 +23,8 @@ public class MonsterPool : ObjectPool
         //         정해진 정수 or 몬스터 n마리 처치 시 종료?
         for (int i = 0; i < count; i++)
         {
-            GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Test");
-            //monster.transform.position = ReturnRandomPos();
+            GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
+            monster.transform.position = ReturnRandomPos();
 
             yield return new WaitForSeconds(1f);
         }
@@ -35,17 +35,17 @@ public class MonsterPool : ObjectPool
     // 2. 중앙위치에 -(범위/2) ~ (범위/2) 값을 더해서 랜덤한 위치에 생성되도록
 
     // TODO :: 3. 사방의 문에서 생성되도록 범위 지정하기
-    //public Vector2 ReturnRandomPos()
-    //{
-    //    Vector2 pos = testMap.transform.position;
-    //    float x = mapCollider.bounds.size.x;
-    //    float y = mapCollider.bounds.size.y;
+    public Vector2 ReturnRandomPos()
+    {
+        Vector2 pos = testMap.transform.position;
+        float x = mapCollider.bounds.size.x;
+        float y = mapCollider.bounds.size.y;
 
-    //    x = Random.Range((x / 2) * -1, x / 2);
-    //    y = Random.Range((y / 2) * -1, y / 2);
+        x = Random.Range((x / 2) * -1, x / 2);
+        y = Random.Range((y / 2) * -1, y / 2);
 
-    //    Vector2 randomPos = new Vector2(x, y);
+        Vector2 randomPos = new Vector2(x, y);
 
-    //    return pos + randomPos;
-    //}
+        return pos + randomPos;
+    }
 }
