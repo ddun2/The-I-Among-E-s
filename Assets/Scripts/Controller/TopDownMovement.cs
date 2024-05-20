@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TopDownMovement : MonoBehaviour
 {
-    private TopDownController controller;
+    private IAEController controller;
     private Rigidbody2D movementRigidbody;
 
     private Vector2 movementdirection = Vector2.zero;
 
     private void Awake()
     {
-        controller = GetComponent<TopDownController>();
+        controller = GetComponent<IAEController>();
         movementRigidbody = GetComponent<Rigidbody2D>();
     }
 
