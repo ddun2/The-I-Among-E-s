@@ -7,11 +7,12 @@ public class IAEController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action OnAttackEvent;
+    public event Action<AttackSO> OnAttackEvent;
+    protected CharacterStatHandler stats { get; private set; }
 
     protected virtual void Awake()
     {
-        Debug.Log("IAEController ¸¸µé±â");
+        stats = GetComponent<CharacterStatHandler>();
     }
 
     public void CallMoveEvent(Vector2 direction)
@@ -24,8 +25,8 @@ public class IAEController : MonoBehaviour
         OnLookEvent?.Invoke(direction);
     }
 
-    public void CallAttackEvent()
+    public void CallAttackEvent(AttackSO attackSO)
     {
-        OnAttackEvent?.Invoke();
+        OnAttackEvent?.Invoke(attackSO);
     }
 }

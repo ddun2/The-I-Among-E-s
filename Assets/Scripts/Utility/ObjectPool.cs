@@ -11,6 +11,7 @@ public class ObjectPool : MonoBehaviour
         public GameObject prefab;
         public string tag;
         public int size;
+        public int number;
     }
 
     public List<Pool> pools = new List<Pool>();
@@ -21,7 +22,7 @@ public class ObjectPool : MonoBehaviour
         PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (var pool in pools)
-        {
+        {            
             Queue<GameObject> queue = new Queue<GameObject>();
 
             for(int i=0; i<pool.size; i++)
