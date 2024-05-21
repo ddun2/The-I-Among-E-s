@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterPool : ObjectPool
 {
-    [SerializeField] GameObject testMap;
+    [SerializeField] GameObject Enemies;
     private Transform[] spawnPoint;
     // 적 생성 주기, 숫자, 최대 숫자
     // TODO:: 스테이지에 따라 변경 가능하도록
@@ -20,25 +20,31 @@ public class MonsterPool : ObjectPool
         
         // 동시에 생성되는 적의 수
         // TODO:: 스테이지에 따라 변경할 수 있도록하기
-        //enemiesPerSpawn = 5;
-
-        StartCoroutine(SpawnMonster(pools.Count));
+        
+        StartCoroutine(SpawnMonster());
     }
     
     // TODO :: 실제 스폰처리는 다른 곳에서 함
     // TODO :: 스폰 시 코루틴 사용       
-    IEnumerator SpawnMonster(int count)
+    IEnumerator SpawnMonster()
     {
         while (true)
         {
             // 일정 시간마다 스폰
             yield return new WaitForSeconds(spawnTime);
+            Debug.Log(currentEnemies);
+            Debug.Log(pools[0].size);
 
             for (int i = 0; i < enemiesPerSpawn; i++)
-            {             
-                GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
-                monster.transform.position = ReturnRandomPos();
-                currentEnemies++;
+            {
+                if (currentEnemies < pools[0].size)
+                {
+                    GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
+                    monster.transform.position = ReturnRandomPos();
+                    // 활성화 시 Enemies 오브젝트의 자식으로 지정
+                    monster.transform.SetParent(Enemies.transform, false);
+                    currentEnemies++;
+                }               
             }
         }
     }
