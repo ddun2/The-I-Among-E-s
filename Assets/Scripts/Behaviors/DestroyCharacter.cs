@@ -21,11 +21,12 @@ public class DestroyCharacter : MonoBehaviour
         // TODO :: 사망 애니메이션 추가하기(색 변화 등)
 
         // 1초 뒤에 소멸
+        // TODO:: SetActive(false)로 변경, 오브젝트 풀 이용하기 위함
         Destroy(gameObject, 1f);
     }
 
     // TODO :: 몬스터가 화면 밖으로 벗어나게 할지 벽에 충돌하게 할지 정하기
-    // 화면 밖으로 벗어나면 소멸
+    // 몬스터도 벽에 충돌
     private void OnBecameInvisible()
     {
         Destroy(gameObject);

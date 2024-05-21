@@ -4,29 +4,48 @@ using UnityEngine;
 
 public class MonsterPool : ObjectPool
 {
-    [SerializeField] GameObject testMap;
-    BoxCollider2D mapCollider;
+    [SerializeField] GameObject Enemies;
+    private Transform[] spawnPoint;
+    // 적 생성 주기, 숫자, 최대 숫자
+    // TODO:: 스테이지에 따라 변경 가능하도록
+    public float spawnTime;
+    public int enemiesPerSpawn;
+    private int currentEnemies = 0;
+    
 
     private void Start()
     {
-        mapCollider = testMap.GetComponent<BoxCollider2D>();
-        StartCoroutine(SpawnMonster(9));
-        Vector2 pos = testMap.transform.position;
-        Debug.Log(pos);
+        // 미리 지정한 스폰 위치들을 받아옴
+        spawnPoint = GameObject.Find("SpawnPoint").GetComponentsInChildren<Transform>();
+        
+        // 동시에 생성되는 적의 수
+        // TODO:: 스테이지에 따라 변경할 수 있도록하기
+        
+        StartCoroutine(SpawnMonster());
     }
     
     // TODO :: 실제 스폰처리는 다른 곳에서 함
     // TODO :: 스폰 시 코루틴 사용       
-    IEnumerator SpawnMonster(int count)
+    IEnumerator SpawnMonster()
     {
-        // TODO :: 반복 횟수 정하기
-        //         정해진 정수 or 몬스터 n마리 처치 시 종료?
-        for(int i=0;i<count;i++)
-        {           
-            GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Test");
-            monster.transform.position = ReturnRandomPos();
+        while (true)
+        {
+            // 일정 시간마다 스폰
+            yield return new WaitForSeconds(spawnTime);
+            Debug.Log(currentEnemies);
+            Debug.Log(pools[0].size);
 
-            yield return new WaitForSeconds(1f);
+            for (int i = 0; i < enemiesPerSpawn; i++)
+            {
+                if (currentEnemies < pools[0].size)
+                {
+                    GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
+                    monster.transform.position = ReturnRandomPos();
+                    // 활성화 시 Enemies 오브젝트의 자식으로 지정
+                    monster.transform.SetParent(Enemies.transform, false);
+                    currentEnemies++;
+                }               
+            }
         }
     }
 
@@ -34,18 +53,13 @@ public class MonsterPool : ObjectPool
     // 1. 맵 콜라이더를 가져와서 x, y 범위를 저장
     // 2. 중앙위치에 -(범위/2) ~ (범위/2) 값을 더해서 랜덤한 위치에 생성되도록
 
-    // TODO :: 3. 플레이어 시작 위치에 생성되면 안되니까 정중앙은 조금 비워둬야함
+    // TODO :: 3. 사방의 문에서 생성되도록 범위 지정하기
+    // 스폰 포인트 지정?
     public Vector2 ReturnRandomPos()
-    {
-        Vector2 pos = testMap.transform.position;
-        float x = mapCollider.bounds.size.x;
-        float y = mapCollider.bounds.size.y;
-
-        x = Random.Range((x / 2) * -1, x / 2);
-        y = Random.Range((y / 2) * -1, y / 2);
-
-        Vector2 randomPos = new Vector2(x, y);
-
-        return pos + randomPos;
+    {        
+        int index = Random.Range(1, spawnPoint.Length);
+        Vector2 randomPos = new Vector2(spawnPoint[index].position.x, spawnPoint[index].position.y);
+        
+        return randomPos;
     }
 }
