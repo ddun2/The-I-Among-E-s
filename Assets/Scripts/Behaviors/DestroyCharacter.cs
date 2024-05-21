@@ -21,6 +21,7 @@ public class DestroyCharacter : MonoBehaviour
         // TODO :: 사망 애니메이션 추가하기(색 변화 등)
 
         // 1초 뒤에 소멸
+        // TODO:: SetActive(false)로 변경, 오브젝트 풀 이용하기 위함
         Destroy(gameObject, 1f);
     }
 
