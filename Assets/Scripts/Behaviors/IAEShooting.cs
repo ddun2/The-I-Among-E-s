@@ -44,14 +44,14 @@ public class IAEShooting : MonoBehaviour
 
     private void CreateProjectile(AttackSO attackSO, float angle)
     {
-        // TODO :: ProjectileController Ãß°¡
         GameObject obj = GameManager.Instance.ObjectPool.SpawnFromPool(attackSO.projectileNameTag);
+        Debug.Log(attackSO.projectileNameTag);
         obj.transform.position = projectileSpawnPosition.position;
-        // ProjectileController attackController = obj.GetComponent<ProjectileController>();
-        // attackController.InitializeAttack(RotateVector2(aimDirection, angle), attackSO);
+        ProjectileController attackController = obj.GetComponent<ProjectileController>();
+        attackController.OnAttack(RotateVector2(aimDirection, angle), attackSO);
     }
 
-    private object RotateVector2(Vector2 v, float angle)
+    private Vector2 RotateVector2(Vector2 v, float angle)
     {
         return Quaternion.Euler(0f, 0f, angle) * v;
     }
