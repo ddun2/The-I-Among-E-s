@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class IAEAimRotaion : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer armRenderer;
     [SerializeField] private Transform armPivot;
-
     [SerializeField] private SpriteRenderer characterRenderer;
 
     private IAEController controller;
 
-    private void Awake()
+    private void Awake() 
     {
         controller = GetComponent<IAEController>();
     }
@@ -32,7 +30,6 @@ public class IAEAimRotaion : MonoBehaviour
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
-        armRenderer.flipY = characterRenderer.flipX;
         armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
     }
 }
