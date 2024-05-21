@@ -11,7 +11,6 @@ public class ObjectPool : MonoBehaviour
         public GameObject prefab;
         public string tag;
         public int size;
-        public int number;
     }
 
     public List<Pool> pools = new List<Pool>();
