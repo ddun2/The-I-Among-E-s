@@ -33990,10 +33990,14 @@ GameObject:
   - component: {fileID: 1843856337}
   - component: {fileID: 1843856338}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 7
 =======
   m_Layer: 0
 >>>>>>> parent of 7dc1012 (Update:캐릭터 이동)
+=======
+  m_Layer: 7
+>>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34024,6 +34028,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843856336}
   m_Enabled: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Density: 1
 =======
@@ -34090,6 +34095,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
 >>>>>>> parent of 7dc1012 (Update:캐릭터 이동)
+=======
+  m_Density: 1
+>>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -34098,6 +34106,9 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -34127,12 +34138,15 @@ Rigidbody2D:
   serializedVersion: 2
   m_Size: {x: 0.9776673, y: 1.8411977}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 =======
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
 >>>>>>> parent of 7dc1012 (Update:캐릭터 이동)
+=======
+>>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
 --- !u!1 &2025818003
 GameObject:
   m_ObjectHideFlags: 0
