@@ -328,4 +328,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f564bb50f4a1840818c1e1f32b6b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projactileSpawnPosition: {fileID: 443013152718759478}
+  projectileSpawnPosition: {fileID: 443013152718759478}
