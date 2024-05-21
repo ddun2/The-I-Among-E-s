@@ -33989,15 +33989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843856337}
   - component: {fileID: 1843856338}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_Layer: 7
-=======
-  m_Layer: 0
->>>>>>> parent of 7dc1012 (Update:캐릭터 이동)
-=======
-  m_Layer: 7
->>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34028,76 +34020,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843856336}
   m_Enabled: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_Density: 1
-=======
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85777d43579f5e5439930e0dd8a97281, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1843856339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843856336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb0bfdda6859b45b6e01ff5ea2b197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1843856340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843856336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 86fe0a2bdf532f340b75fdc0a0dfd40a, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!50 &1843856341
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843856336}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
->>>>>>> parent of 7dc1012 (Update:캐릭터 이동)
-=======
-  m_Density: 1
->>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -34105,10 +34028,6 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -34138,15 +34057,6 @@ Rigidbody2D:
   serializedVersion: 2
   m_Size: {x: 0.9776673, y: 1.8411977}
   m_EdgeRadius: 0
-<<<<<<< HEAD
-=======
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
->>>>>>> parent of 7dc1012 (Update:캐릭터 이동)
-=======
->>>>>>> parent of cbd39eb (Merge branch 'DEV' into seoyeong)
 --- !u!1 &2025818003
 GameObject:
   m_ObjectHideFlags: 0
