@@ -8,7 +8,7 @@ public class IAEShooting : MonoBehaviour
 {
     private IAEController controller;
 
-    [SerializeField] private Transform projactileSpawnPosition;
+    [SerializeField] private Transform projectileSpawnPosition;
     private Vector2 aimDirection = Vector2.right;
 
     private void Awake()
@@ -44,6 +44,15 @@ public class IAEShooting : MonoBehaviour
 
     private void CreateProjectile(AttackSO attackSO, float angle)
     {
-        // TODO :: 생성 후 발사
+        // TODO :: ProjectileController 추가
+        GameObject obj = GameManager.Instance.ObjectPool.SpawnFromPool(attackSO.projectileNameTag);
+        obj.transform.position = projectileSpawnPosition.position;
+        // ProjectileController attackController = obj.GetComponent<ProjectileController>();
+        // attackController.InitializeAttack(RotateVector2(aimDirection, angle), attackSO);
+    }
+
+    private object RotateVector2(Vector2 v, float angle)
+    {
+        return Quaternion.Euler(0f, 0f, angle) * v;
     }
 }
