@@ -37,7 +37,9 @@ public class DestroyCharacter : MonoBehaviour
             // ¡∂¿€¿ª ∏ÿ√·¥Ÿ
             PlayerInput playerInput = GetComponent<PlayerInput>();
             playerInput.enabled = false;
-            Destroy(gameObject, 5f);
+
+            Destroy(gameObject, 2f);
+            
         }
 
         // 1√  µ⁄ø° º“∏Í

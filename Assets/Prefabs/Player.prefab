@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6199095277987814643}
   - component: {fileID: 4965526660733478139}
   - component: {fileID: 7800174547967868400}
-  - component: {fileID: 1229024122191169483}
   - component: {fileID: 9039173036636287199}
   - component: {fileID: 7703144455130480595}
+  - component: {fileID: 6388827640108594421}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -72,7 +72,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.17493942, y: -0.018610597}
+  m_Offset: {x: -0.05441737, y: 0.007910132}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -83,7 +83,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9776673, y: 1.8411977}
+  m_Size: {x: 1.185883, y: 1.8287852}
   m_EdgeRadius: 0
 --- !u!114 &6321279791413170831
 MonoBehaviour:
@@ -100,7 +100,7 @@ MonoBehaviour:
   baseStat:
     statChangeType: 2
     life: 3
-    speed: 0
+    speed: 10
     attackSO: {fileID: 11400000, guid: 95b3fa8e7fe67c946a2c3de9c0e13241, type: 2}
   statModifiers: []
 --- !u!114 &6199095277987814643
@@ -173,18 +173,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1229024122191169483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3178959535084168342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d12ef2e685e2c4ca2eac455abcc813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9039173036636287199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +195,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a327c70511713a4da69c682ad166839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6388827640108594421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3178959535084168342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85777d43579f5e5439930e0dd8a97281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4572139074079416520

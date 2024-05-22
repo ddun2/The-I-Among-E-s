@@ -37,10 +37,22 @@ public class MonsterPool : ObjectPool
             {
                 if (currentEnemies < pools[0].size)
                 {
-                    GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
-                    monster.transform.position = ReturnRandomPos();
-                    // 활성화 시 Enemies 오브젝트의 자식으로 지정
-                    monster.transform.SetParent(Enemies.transform, false);
+                    int rand = Random.Range(1, 11);
+                    if (rand >= 0)
+                    {
+                        GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
+                        monster.transform.position = ReturnRandomPos();
+                        // 활성화 시 Enemies 오브젝트의 자식으로 지정
+                        monster.transform.SetParent(Enemies.transform, false);
+                    }
+                    else
+                    {
+                        GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("RangeEnemy");
+                        monster.transform.position = ReturnRandomPos();
+                        // 활성화 시 Enemies 오브젝트의 자식으로 지정
+                        monster.transform.SetParent(Enemies.transform, false);
+
+                    }                    
                     currentEnemies++;
                 }               
             }

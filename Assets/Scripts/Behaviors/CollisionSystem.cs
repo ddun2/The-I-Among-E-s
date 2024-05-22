@@ -32,6 +32,7 @@ public class CollisionSystem : MonoBehaviour
     {
         if (isAttacked && timeSinceLastOnDamage < lifeChangeDelay)
         {
+            Debug.Log(timeSinceLastOnDamage);
             timeSinceLastOnDamage += Time.deltaTime;
             if (timeSinceLastOnDamage >= lifeChangeDelay)
             {
@@ -42,11 +43,10 @@ public class CollisionSystem : MonoBehaviour
     }
 
     public bool ChangeLife()
-    {
-        Debug.Log("ChangeLife 진입");
+    {       
         // 무적상태라면 life 변경 안함
         if (timeSinceLastOnDamage < lifeChangeDelay)
-        {            
+        {
             return false;
         }
 
@@ -69,26 +69,7 @@ public class CollisionSystem : MonoBehaviour
 
     public void CallDeath()
     {
-        OnDeath?.Invoke();
-        Debug.Log("CallDeath");
+        OnDeath?.Invoke();        
     }
-
-
-
-    // ------- ContackEnemyContoller.cs
-
-    //// 공격 실행
-    //private void ApplyAttack()
-    //{
-    //    AttackSO attackSO = stats.CurrentStat.AttackSO;
-    //    // 공격이 가능한지 판별 및 공격 적용
-    //    bool isAttackable = true;
-
-    //    if (isAttackable && attackSO.isOnKnockBack && collidingMovement != null)
-    //    {
-    //        collidingMovement.ApplyKnockBack(transform, attackSO.knockBackPower, attackSO.knockBackTime);
-    //    }
-    //}
-
 }
 
