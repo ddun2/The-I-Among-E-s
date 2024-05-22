@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3274628453085511642}
   - component: {fileID: 8287218811443854408}
+  - component: {fileID: 3677238431910461199}
   m_Layer: 6
   m_Name: GameObject
   m_TagString: Enemy
@@ -147,6 +148,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3677238431910461199
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911267851373825436}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9ff6fce8be014848a73d85d8b7ea908, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8976277410992919216
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStat:
     statChangeType: 2
+    life: 0
     speed: 5
     attackSO: {fileID: 11400000, guid: e7520d8f18daeaa4eaf82230175fe23c, type: 2}
   statModifiers: []
