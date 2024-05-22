@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +17,13 @@ public class GameManager : MonoBehaviour
     public Transform Player { get; private set; }
     public ObjectPool ObjectPool { get; private set; }
     public static bool isGameOver;
+    public bool isOncetime = false;
+    public Text ScoreTxt;
+    private float time = 0.0f;
+    private bool isPlay;
+    public Text nowScore;
+    public Text bestScore;
+
 
     private void Awake()
     {
@@ -25,14 +35,25 @@ public class GameManager : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
         ObjectPool = GetComponent<ObjectPool>();
         isGameOver = false;
+        isPlay = true;
     }
-
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
     private void Update()
     {
         if (isGameOver)
         {
             GameOver();
         }
+
+        if (isPlay)
+        {
+            time += Time.deltaTime;
+            ScoreTxt.text = (time.ToString("N1"));
+        }
+
     }
     public void NextBtn()
     {
@@ -52,6 +73,38 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        storyPanel.SetActive(true);
+        if(isOncetime == false)
+        {
+            storyPanel.SetActive(true);
+            isOncetime=true;
+        }
+        isPlay = false;
+        Time.timeScale = 0.0f;
+
+        nowScore.text = time.ToString("N1");
+
+        // 최고점수가 있다면
+        if (PlayerPrefs.HasKey("bestScore"))
+        {
+            // 최고점수 < 현재점수
+            if (PlayerPrefs.GetFloat("bestScore") < time)
+            {
+                // 최고점수 = 현재점수
+                PlayerPrefs.SetFloat("bestScore", time);
+                bestScore.text = time.ToString("N1");
+            }
+            else
+            {
+                bestScore.text = PlayerPrefs.GetFloat("bestScore").ToString("N1");
+            }
+        }
+        // 최고점수가 없다면
+        else
+        {
+            // 현재 점수를 저장한다.
+            PlayerPrefs.SetFloat("bestScore", time);
+            bestScore.text = time.ToString("N1");
+
+        }
     }
 }
