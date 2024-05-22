@@ -26,7 +26,6 @@ public class IAEController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        Debug.Log(stats.CurrentStat.attackSO.delay);
         if (timeSinceLastAttack < stats.CurrentStat.attackSO.delay)
         {
             timeSinceLastAttack += Time.deltaTime;
