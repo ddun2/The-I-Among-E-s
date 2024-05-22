@@ -11,7 +11,7 @@ public class IntroUI : MonoBehaviour
     
     public TMP_InputField inputField;
     // Start is called before the first frame update
-    
+    public GameObject warningScreen;
    
 
     public void OnClickStartBtn()
@@ -23,8 +23,13 @@ public class IntroUI : MonoBehaviour
         }
         else if (inputField.text[0] == 'e' || inputField.text[0] == 'E')
         {
-            return;
+            warningScreen.SetActive(true);
         }
         else return;
+    }
+
+    public void CloseScreen()
+    {
+        warningScreen.SetActive(false);
     }
 }
