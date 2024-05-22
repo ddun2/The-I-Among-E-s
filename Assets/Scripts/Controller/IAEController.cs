@@ -34,7 +34,6 @@ public class IAEController : MonoBehaviour
         {
             timeSinceLastAttack = 0.0f;
             CallAttackEvent(stats.CurrentStat.attackSO);
-            Debug.Log("¤·¤·");
         }
     }
 

@@ -7416,6 +7416,9 @@ MonoBehaviour:
   - prefab: {fileID: 8976277410992919216, guid: 682529e5b7e37f24f89dd145042ef29d, type: 3}
     tag: Enemy
     size: 20
+  - prefab: {fileID: 4033314812214624533, guid: 9e68d2575f0f6734c9d3e886bb47b80f, type: 3}
+    tag: Bullet
+    size: 20
   Enemies: {fileID: 1759503849}
   spawnTime: 0.5
   enemiesPerSpawn: 1
