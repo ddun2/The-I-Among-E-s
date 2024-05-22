@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 public class PlayerInputController : IAEController
 {
     private Camera Camera;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Camera = Camera.main;
     }
 
