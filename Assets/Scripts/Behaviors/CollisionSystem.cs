@@ -24,6 +24,7 @@ public class CollisionSystem : MonoBehaviour
     public void CallDeath()
     {
         OnDeath?.Invoke();
+        Debug.Log("CallDeath");
     }
 
 

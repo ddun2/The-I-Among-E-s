@@ -32,9 +32,7 @@ public class MonsterPool : ObjectPool
         {
             // 일정 시간마다 스폰
             yield return new WaitForSeconds(spawnTime);
-            Debug.Log(currentEnemies);
-            Debug.Log(pools[0].size);
-
+            
             for (int i = 0; i < enemiesPerSpawn; i++)
             {
                 if (currentEnemies < pools[0].size)
