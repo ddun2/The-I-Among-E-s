@@ -34,7 +34,6 @@ public class ProjectileController : MonoBehaviour
         if (currentDuration > attackData.duration)
         {
             DestroyProjectile(transform.position, false);
-            Debug.Log("발사체 파괴(몰라)");
         }
 
         rigidbody.velocity = direction * attackData.speed;
@@ -50,16 +49,19 @@ public class ProjectileController : MonoBehaviour
             // 충돌 지점보다 앞에서 발사체 파괴
             Vector2 destroyPosition = collision.ClosestPoint(transform.position) - direction * 0.2f;
             DestroyProjectile(destroyPosition, fxOnDestory);
-            Debug.Log("발사체 파괴(벽)");
         }
         // 타겟과 충돌했을 때
         else if(IsLayerMatched(attackData.target.value, collision.gameObject.layer))
         {
-            // 넉백
-            ApplyKnockBack(collision);
+            CollisionSystem collisionSystem = collision.GetComponent<CollisionSystem>();
+            bool isAttacked = collisionSystem.ChangeLife();
+
+            if(isAttacked && attackData.isOnKnockBack)
+            {                
+                ApplyKnockBack(collision);
+            }
 
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
-            Debug.Log("발사체 파괴(플레이어)");
         }
     }
 
