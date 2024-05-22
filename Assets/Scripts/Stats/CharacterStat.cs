@@ -14,6 +14,7 @@ public enum StatChangeType
 public class CharacterStat
 {
     public StatChangeType statChangeType;
+    public int life;
     [Range(1f, 20f)] public float speed;
     public AttackSO attackSO;
 
