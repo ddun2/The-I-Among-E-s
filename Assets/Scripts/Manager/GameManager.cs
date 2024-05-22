@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject storyPanel;
     public Transform Player { get; private set; }
     public ObjectPool ObjectPool { get; private set; }
+    public static bool isGameOver;
 
     private void Awake()
     {
@@ -21,8 +24,16 @@ public class GameManager : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
         ObjectPool = GetComponent<ObjectPool>();
+        isGameOver = false;
     }
 
+    private void Update()
+    {
+        if (isGameOver)
+        {
+            GameOver();
+        }
+    }
     public void NextBtn()
     {
         storyPanel.SetActive(false);
@@ -37,5 +48,10 @@ public class GameManager : MonoBehaviour
     public void MenuBtn()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void GameOver()
+    {
+        storyPanel.SetActive(true);
     }
 }
