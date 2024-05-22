@@ -365,8 +365,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1310195514}
-        m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
+      - m_Target: {fileID: 1310195511}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RetryBtn
         m_Mode: 1
         m_Arguments:
@@ -498,9 +498,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1310195514}
-        m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
-        m_MethodName: EndPanel
+      - m_Target: {fileID: 1310195511}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NextBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5021,6 +5021,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425160277}
   m_CullTransparentMesh: 1
+--- !u!1001 &441798687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3078013037582701219, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: baseStat.speed
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573333146860170284, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
 --- !u!1 &477654875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,7 +5262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6e5e8e616a4d24ebb474d9db6a4105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6112068965856838669, guid: 6a2cba13a5cbca24688922af4a76092f, type: 3}
 --- !u!1 &552621033
 GameObject:
   m_ObjectHideFlags: 0
@@ -8337,8 +8398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  endPanel: {fileID: 0}
-  storyPanel: {fileID: 0}
+  endPanel: {fileID: 1812382055}
+  storyPanel: {fileID: 679120284}
 --- !u!4 &1310195512
 Transform:
   m_ObjectHideFlags: 0
@@ -8555,8 +8616,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1310195514}
-        m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
+      - m_Target: {fileID: 1310195511}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: MenuBtn
         m_Mode: 1
         m_Arguments:
@@ -49859,3 +49920,4 @@ SceneRoots:
   - {fileID: 1759503850}
   - {fileID: 354155863}
   - {fileID: 672745491}
+  - {fileID: 441798687}
