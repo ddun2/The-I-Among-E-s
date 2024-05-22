@@ -270,8 +270,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "'E' , 'e'\uB294 \uC774 \uAC8C\uC784\uC744 \uD50C\uB808\uC774 \uD558\uC2E4\uC218
-    \uC5C6\uC2B5\uB2C8\uB2E4."
+  m_Text: "'E' , 'e'\uB294 \uBC16\uC5D0\uC11C \uCE5C\uAD6C\uB4E4\uC774\uB098 \uB9CC\uB098\uB294
+    \uAC74 \uC5B4\uB5A8\uAE4C\uC694?"
 --- !u!222 &165446537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.68568444, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.770489, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

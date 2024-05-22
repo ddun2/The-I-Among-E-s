@@ -32,4 +32,5 @@ public class IntroUI : MonoBehaviour
     {
         warningScreen.SetActive(false);
     }
+
 }
