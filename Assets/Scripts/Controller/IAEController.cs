@@ -33,7 +33,7 @@ public class IAEController : MonoBehaviour
         else if ( IsAttacking && timeSinceLastAttack >= stats.CurrentStat.attackSO.delay)
         {
             timeSinceLastAttack = 0.0f;
-            CallAttackEvent(stats.CurrentStat.attackSO);          
+            CallAttackEvent(stats.CurrentStat.attackSO);
         }
     }
 
