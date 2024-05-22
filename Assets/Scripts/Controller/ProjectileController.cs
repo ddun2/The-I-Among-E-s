@@ -44,8 +44,6 @@ public class ProjectileController : MonoBehaviour
         // 벽과 충돌했을 때
         if(IsLayerMatched(levelLayer.value, collision.gameObject.layer))
         {
-            Debug.Log(levelLayer);
-            Debug.Log(collision.gameObject);
             // 충돌 지점보다 앞에서 발사체 파괴
             Vector2 destroyPosition = collision.ClosestPoint(transform.position) - direction * 0.2f;
             DestroyProjectile(destroyPosition, fxOnDestory);
@@ -55,6 +53,7 @@ public class ProjectileController : MonoBehaviour
         {
             CollisionSystem collisionSystem = collision.GetComponent<CollisionSystem>();
             bool isAttacked = collisionSystem.ChangeLife();
+            Debug.Log(collisionSystem.CurrentLife);
 
             if(isAttacked && attackData.isOnKnockBack)
             {                

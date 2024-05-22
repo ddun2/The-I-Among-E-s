@@ -38,6 +38,7 @@ public class MonsterPool : ObjectPool
                 if (currentEnemies < pools[0].size)
                 {
                     int rand = Random.Range(1, 11);
+                    // 근접공격 Enemy 생성
                     if (rand >= 0)
                     {
                         GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
@@ -45,6 +46,7 @@ public class MonsterPool : ObjectPool
                         // 활성화 시 Enemies 오브젝트의 자식으로 지정
                         monster.transform.SetParent(Enemies.transform, false);
                     }
+                    // 원거리공격 Enemy 생성
                     else
                     {
                         GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("RangeEnemy");

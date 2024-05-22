@@ -45,7 +45,7 @@ public class IAEMovement : MonoBehaviour
     }
 
     private void ApplyMovement(Vector2 direction)
-    {
+    {        
         direction *= characterStatHandler.CurrentStat.speed;
 
         if (knockbackDuration > 0.0f)

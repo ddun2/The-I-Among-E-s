@@ -11,7 +11,7 @@ public class CharacterStatHandler : MonoBehaviour
 
     public List<CharacterStat> statModifiers = new List<CharacterStat>();
 
-    public void Awake()
+    private void Awake()
     {
         UpdateStat();
     }
