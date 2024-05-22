@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8877197741070388205}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,7 +332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStat:
     statChangeType: 2
-    speed: 0
+    life: 3
+    speed: 8
     attackSO: {fileID: 11400000, guid: 95b3fa8e7fe67c946a2c3de9c0e13241, type: 2}
   statModifiers: []
 --- !u!114 &6257589484158228608
@@ -347,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550261df7ba58244784a6b5f690e71d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeChangeDelay: 1
 --- !u!50 &4700470549097253313
 Rigidbody2D:
   serializedVersion: 4

@@ -31,8 +31,7 @@ public class CollisionSystem : MonoBehaviour
     private void Update()
     {
         if (isAttacked && timeSinceLastOnDamage < lifeChangeDelay)
-        {
-            Debug.Log(timeSinceLastOnDamage);
+        {            
             timeSinceLastOnDamage += Time.deltaTime;
             if (timeSinceLastOnDamage >= lifeChangeDelay)
             {
@@ -43,7 +42,8 @@ public class CollisionSystem : MonoBehaviour
     }
 
     public bool ChangeLife()
-    {       
+    {
+        Debug.Log("CL");
         // 무적상태라면 life 변경 안함
         if (timeSinceLastOnDamage < lifeChangeDelay)
         {
@@ -56,6 +56,10 @@ public class CollisionSystem : MonoBehaviour
 
         // 현재 생명을 1 감소 시키고 생명이 0일때 사망 판정
         CurrentLife -= 1;
+
+        if(this.tag == "Player")
+            HealthManager.health--;
+
         if (CurrentLife <= 0)
         {
             CallDeath();
@@ -68,7 +72,7 @@ public class CollisionSystem : MonoBehaviour
     }
 
     public void CallDeath()
-    {
+    {        
         OnDeath?.Invoke();        
     }
 }

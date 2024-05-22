@@ -18,7 +18,7 @@ public class DestroyCharacter : MonoBehaviour
     }
 
     private void OnDeath()
-    {
+    {        
         // ¿Ãµø¿ª ∏ÿ√·¥Ÿ
         rigidbody.velocity = Vector2.zero;
 

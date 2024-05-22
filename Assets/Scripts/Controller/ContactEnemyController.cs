@@ -8,14 +8,14 @@ public class ContactEnemyController : EnemyController
 
     [SerializeField] private SpriteRenderer characterRenderer;
 
-    CollisionSystem collisionSystem;
+    //CollisionSystem collisionSystem;
     private CollisionSystem targetCollisionSystem;
     private IAEMovement targetMovement;
 
     protected override void Start()
     {
         base.Start();
-        collisionSystem = GetComponent<CollisionSystem>();
+        //collisionSystem = GetComponent<CollisionSystem>();
     }
 
     protected override void FixedUpdate()
