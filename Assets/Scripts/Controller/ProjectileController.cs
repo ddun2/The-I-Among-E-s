@@ -34,6 +34,7 @@ public class ProjectileController : MonoBehaviour
         if (currentDuration > attackData.duration)
         {
             DestroyProjectile(transform.position, false);
+            Debug.Log("발사체 파괴(몰라)");
         }
 
         rigidbody.velocity = direction * attackData.speed;
@@ -44,9 +45,12 @@ public class ProjectileController : MonoBehaviour
         // 벽과 충돌했을 때
         if(IsLayerMatched(levelLayer.value, collision.gameObject.layer))
         {
+            Debug.Log(levelLayer);
+            Debug.Log(collision.gameObject);
             // 충돌 지점보다 앞에서 발사체 파괴
             Vector2 destroyPosition = collision.ClosestPoint(transform.position) - direction * 0.2f;
             DestroyProjectile(destroyPosition, fxOnDestory);
+            Debug.Log("발사체 파괴(벽)");
         }
         // 타겟과 충돌했을 때
         else if(IsLayerMatched(attackData.target.value, collision.gameObject.layer))
@@ -54,16 +58,15 @@ public class ProjectileController : MonoBehaviour
             // 넉백
             ApplyKnockBack(collision);
 
-            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);            
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
+            Debug.Log("발사체 파괴(플레이어)");
         }
     }
 
     // 레이어 확인 메소드
     private bool IsLayerMatched(int layerMask, int objectLayer)
     {
-        if(layerMask == objectLayer)
-            return true;
-        return false;
+        return layerMask == (layerMask | (1 << objectLayer));
     }
 
     // 넉백 적용하는 메소드
@@ -93,6 +96,7 @@ public class ProjectileController : MonoBehaviour
         {
             //TODO : 이펙트 추가하기
         }
+        
         gameObject.SetActive(false);
     }
 }

@@ -44,8 +44,7 @@ public class IAEShooting : MonoBehaviour
 
     private void CreateProjectile(AttackSO attackSO, float angle)
     {
-        GameObject obj = GameManager.Instance.ObjectPool.SpawnFromPool(attackSO.projectileNameTag);
-        Debug.Log(attackSO.projectileNameTag);
+        GameObject obj = GameManager.Instance.ObjectPool.SpawnFromPool(attackSO.projectileNameTag);        
         obj.transform.position = projectileSpawnPosition.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
         attackController.OnAttack(RotateVector2(aimDirection, angle), attackSO);

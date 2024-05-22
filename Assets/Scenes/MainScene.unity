@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 171813875}
   - component: {fileID: 171813877}
   - component: {fileID: 171813876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3595,7 +3595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222031862}
   - component: {fileID: 222031861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3682,7 +3682,7 @@ GameObject:
   - component: {fileID: 300203832}
   - component: {fileID: 300203834}
   - component: {fileID: 300203833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4588,7 +4588,7 @@ GameObject:
   - component: {fileID: 1096475531}
   - component: {fileID: 1096475533}
   - component: {fileID: 1096475532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6839,7 +6839,7 @@ GameObject:
   - component: {fileID: 1273784901}
   - component: {fileID: 1273784903}
   - component: {fileID: 1273784902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7430,7 +7430,7 @@ GameObject:
   - component: {fileID: 1690259341}
   - component: {fileID: 1690259343}
   - component: {fileID: 1690259342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30123,7 +30123,7 @@ GameObject:
   - component: {fileID: 1725369108}
   - component: {fileID: 1725369107}
   - component: {fileID: 1725369109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33989,6 +33989,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1843856337}
   - component: {fileID: 1843856338}
+  - component: {fileID: 1843856339}
+  - component: {fileID: 1843856340}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -34057,6 +34059,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9776673, y: 1.8411977}
   m_EdgeRadius: 0
+--- !u!114 &1843856339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843856336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d69d0a920e523e4f99f0d88b2df230c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStat:
+    statChangeType: 2
+    speed: 0
+    attackSO: {fileID: 11400000, guid: 95b3fa8e7fe67c946a2c3de9c0e13241, type: 2}
+  statModifiers: []
+--- !u!114 &1843856340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843856336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550261df7ba58244784a6b5f690e71d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2025818003
 GameObject:
   m_ObjectHideFlags: 0
@@ -34152,7 +34183,7 @@ GameObject:
   - component: {fileID: 2103599853}
   - component: {fileID: 2103599855}
   - component: {fileID: 2103599854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
