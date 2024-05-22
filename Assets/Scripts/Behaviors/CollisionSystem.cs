@@ -5,19 +5,65 @@ using UnityEngine;
 
 public class CollisionSystem : MonoBehaviour
 {
+    [SerializeField] private float lifeChangeDelay;
     private bool isAttacked = false;
 
+    private CharacterStatHandler statHandler;
+    private float timeSinceLastOnDamage = float.MaxValue;
+
+
+    public event Action OnDamage;
     public event Action OnDeath;
     public event Action OnInvincibillityEnd;
 
-    private void Update()
+    public int CurrentLife { get; private set; }
+
+    private void Awake()
     {
-        
+        statHandler = GetComponent<CharacterStatHandler>();        
     }
 
-    public bool IsAttacked()
+    private void Start()
     {
-        CallDeath();
+        CurrentLife = statHandler.CurrentStat.life;
+    }
+
+    private void Update()
+    {
+        if (isAttacked && timeSinceLastOnDamage < lifeChangeDelay)
+        {
+            timeSinceLastOnDamage += Time.deltaTime;
+            if (timeSinceLastOnDamage >= lifeChangeDelay)
+            {
+                OnInvincibillityEnd?.Invoke();
+                isAttacked = false;
+            }
+        }
+    }
+
+    public bool ChangeLife()
+    {
+        Debug.Log("ChangeLife 진입");
+        // 무적상태라면 life 변경 안함
+        if (timeSinceLastOnDamage < lifeChangeDelay)
+        {            
+            return false;
+        }
+
+        // 무적 상태가 아닐때
+        // 무적 판정 시간 0으로 초기화
+        timeSinceLastOnDamage = 0;
+
+        // 현재 생명을 1 감소 시키고 생명이 0일때 사망 판정
+        CurrentLife -= 1;
+        if (CurrentLife <= 0)
+        {
+            CallDeath();
+            return true;
+        }
+
+        OnDamage?.Invoke();
+        isAttacked = true;
         return true;
     }
 

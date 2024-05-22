@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DestroyCharacter : MonoBehaviour
 {
@@ -28,7 +29,15 @@ public class DestroyCharacter : MonoBehaviour
         // 플레이어의 사망 처리
         if(rigidbody.tag == "Player")
         {
-            Destroy(gameObject, 1f);
+            // 빨간색으로 변경
+            SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
+            Color color = Color.red;
+            renderer.color = color;
+            
+            // 조작을 멈춘다
+            PlayerInput playerInput = GetComponent<PlayerInput>();
+            playerInput.enabled = false;
+            Destroy(gameObject, 5f);
         }
 
         // 1초 뒤에 소멸

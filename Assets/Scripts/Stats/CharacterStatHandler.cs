@@ -28,5 +28,6 @@ public class CharacterStatHandler : MonoBehaviour
 
         CurrentStat.statChangeType = baseStat.statChangeType;
         CurrentStat.speed = baseStat.speed;
+        CurrentStat.life = baseStat.life;
     }
 }
