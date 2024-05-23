@@ -18,9 +18,12 @@ public class CollisionSystem : MonoBehaviour
 
     public int CurrentLife { get; private set; }
 
+    private Animator animator;
+
     private void Awake()
     {
-        statHandler = GetComponent<CharacterStatHandler>();        
+        statHandler = GetComponent<CharacterStatHandler>();      
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -68,6 +71,8 @@ public class CollisionSystem : MonoBehaviour
 
         OnDamage?.Invoke();
         isAttacked = true;
+        animator.SetTrigger("ChangeColler");
+
         return true;
     }
 
