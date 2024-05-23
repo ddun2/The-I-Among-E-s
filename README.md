@@ -1,5 +1,16 @@
+<p align="center">
+  
+  <img src="https://github.com/ddun2/The-I-Among-E-s/assets/67744902/6b561b0b-c121-48fc-8a1e-ec4afb9f7cb8" width="400" height="500">
+</p>
+
 # 🎮The I Among E's
-게임 소개 작성하기 & 이미지 추가
+"하루 종일 집에 있고 싶어!"
+
+집으로 찾아온 외향인들의 연락을 피해 살아남기
+
+<img src="https://github.com/ddun2/The-I-Among-E-s/assets/67744902/7c7b47a6-b7d3-4a3a-8b6c-b0e58b495e4e" width="450" height="300">
+<img src="https://github.com/ddun2/The-I-Among-E-s/assets/67744902/cd70fdbe-afe4-4260-a822-cc13ed905a50" width="450" height="300">
+
 # 📢프로젝트 소개
 Unity를 활용한 2D TopDownView 슈팅 게임
 
@@ -24,9 +35,8 @@ Unity를 활용한 2D TopDownView 슈팅 게임
 - ## 몬스터
   - 이동
   - 공격
-  - 
-- ## 전투??
-  - 충돌 처리
+- ## 전투 관련
+  - [충돌 처리](https://github.com/ddun2/The-I-Among-E-s/wiki/%EC%B6%A9%EB%8F%8C-%EC%B2%98%EB%A6%AC)
   - [생성 및 소멸](https://github.com/ddun2/The-I-Among-E-s/wiki/%EB%AA%AC%EC%8A%A4%ED%84%B0-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%86%8C%EB%A9%B8)
 - ## UI
   - 시작 화면 -> mbti 입력하고 판별하는부분
