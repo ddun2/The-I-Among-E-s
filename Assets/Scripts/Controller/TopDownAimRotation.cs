@@ -7,7 +7,7 @@ public class TopDownAimRotation : MonoBehaviour
     [SerializeField] private SpriteRenderer armRenderer;
     [SerializeField] private Transform armPivot;
 
-    [SerializeField] private SpriteRenderer charactorRenderer;
+    [SerializeField] private SpriteRenderer characterRenderer;
 
     private IAEController controller;
 
@@ -30,8 +30,8 @@ public class TopDownAimRotation : MonoBehaviour
     {
         float rotZ = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
 
-        charactorRenderer.flipX = MathF.Abs(rotZ) > 90f;
-
+        characterRenderer.flipX = MathF.Abs(rotZ) > 90f;
+        armRenderer.flipY = characterRenderer.flipX;
         armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
     }
 }

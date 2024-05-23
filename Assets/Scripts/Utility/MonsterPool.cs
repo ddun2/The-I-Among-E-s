@@ -23,9 +23,7 @@ public class MonsterPool : ObjectPool
         
         StartCoroutine(SpawnMonster());
     }
-    
-    // TODO :: 실제 스폰처리는 다른 곳에서 함
-    // TODO :: 스폰 시 코루틴 사용       
+  
     IEnumerator SpawnMonster()
     {
         while (true)

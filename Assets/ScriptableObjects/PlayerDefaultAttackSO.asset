@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c7bcfd31544a543b056f01113079f2, type: 3}
   m_Name: PlayerDefaultAttackSO
   m_EditorClassIdentifier: 
-  projectileNameTag: Bullet
+  projectileNameTag: PlayerBullet
   duration: 5
   spread: 4
   speed: 10
