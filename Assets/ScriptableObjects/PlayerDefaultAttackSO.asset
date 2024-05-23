@@ -16,7 +16,7 @@ MonoBehaviour:
   duration: 5
   spread: 4
   speed: 10
-  delay: 0.4
+  delay: 0.2
   multipleShotAngle: 7
   numberOfProjectilePerShot: 1
   target:

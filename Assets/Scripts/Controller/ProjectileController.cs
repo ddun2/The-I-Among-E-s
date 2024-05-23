@@ -53,9 +53,8 @@ public class ProjectileController : MonoBehaviour
         {
             CollisionSystem collisionSystem = collision.GetComponent<CollisionSystem>();
             bool isAttacked = collisionSystem.ChangeLife();
-            Debug.Log(collisionSystem.CurrentLife);
 
-            if(isAttacked && attackData.isOnKnockBack)
+            if (isAttacked && attackData.isOnKnockBack)
             {                
                 ApplyKnockBack(collision);
             }

@@ -334,7 +334,7 @@ MonoBehaviour:
   baseStat:
     statChangeType: 2
     life: 3
-    speed: 11.79
+    speed: 11
     attackSO: {fileID: 11400000, guid: 95b3fa8e7fe67c946a2c3de9c0e13241, type: 2}
   statModifiers: []
 --- !u!114 &7920061687344389195

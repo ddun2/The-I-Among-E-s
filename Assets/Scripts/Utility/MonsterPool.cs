@@ -29,17 +29,17 @@ public class MonsterPool : ObjectPool
     IEnumerator SpawnMonster()
     {
         while (true)
-        {
-            // 일정 시간마다 스폰
+        {            
+            // 게임 종료 시 까지 일정 시간마다 스폰
             yield return new WaitForSeconds(spawnTime);
-            
+                        
             for (int i = 0; i < enemiesPerSpawn; i++)
             {
-                if (currentEnemies < pools[0].size)
+                if (currentEnemies < createdEnemies)
                 {
                     int rand = Random.Range(1, 11);
                     // 근접공격 Enemy 생성
-                    if (rand >= 0)
+                    if (rand > 3)
                     {
                         GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
                         monster.transform.position = ReturnRandomPos();
@@ -53,12 +53,16 @@ public class MonsterPool : ObjectPool
                         monster.transform.position = ReturnRandomPos();
                         // 활성화 시 Enemies 오브젝트의 자식으로 지정
                         monster.transform.SetParent(Enemies.transform, false);
-
                     }                    
                     currentEnemies++;
                 }               
             }
         }
+    }
+
+    public void EnemyDeath()
+    {
+        currentEnemies--;
     }
 
     // 몬스터를 랜덤한 위치에 생성하기 위해 랜덤 위치를 받아오는 함수

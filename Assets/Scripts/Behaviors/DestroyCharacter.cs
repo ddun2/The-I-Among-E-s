@@ -27,7 +27,7 @@ public class DestroyCharacter : MonoBehaviour
         // 적 사망 시 => 페이드아웃처리?
         
         // 플레이어의 사망 처리
-        if(rigidbody.tag == "Player")
+        if(gameObject.tag == "Player")
         {
             // 빨간색으로 변경
             SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
@@ -46,14 +46,9 @@ public class DestroyCharacter : MonoBehaviour
         // TODO:: SetActive(false)로 변경, 오브젝트 풀 이용하기 위함
         else
         {
+            MonsterPool obj = GameManager.Instance.monsterPool;
+            obj.EnemyDeath();
             gameObject.SetActive(false);
         }
-    }
-
-    // TODO :: 몬스터가 화면 밖으로 벗어나게 할지 벽에 충돌하게 할지 정하기
-    // 몬스터도 벽에 충돌
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    }    
 }
