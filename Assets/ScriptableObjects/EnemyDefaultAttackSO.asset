@@ -15,7 +15,7 @@ MonoBehaviour:
   projectileNameTag: Bullet
   duration: 5
   spread: 4
-  speed: 10
+  speed: 8
   delay: 1
   multipleShotAngle: 7
   numberOfProjectilePerShot: 1

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject storyPanel;
     public Transform Player { get; private set; }
     public ObjectPool ObjectPool { get; private set; }
+    public MonsterPool monsterPool { get; private set; }
     public static bool isGameOver;
     public bool isOncetime = false;
     public Text ScoreTxt;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
         ObjectPool = GetComponent<ObjectPool>();
+        monsterPool = GetComponent<MonsterPool>();
         isGameOver = false;
         isPlay = true;
     }
@@ -45,7 +47,8 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOver)
         {
-            GameOver();
+            // 게임 오버 시 사망 연출 표현 후 게임 종료를 위해 지연호출
+            Invoke("GameOver", 1.5f);
         }
 
         if (isPlay)

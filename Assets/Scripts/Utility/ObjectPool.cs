@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
+    protected int createdEnemies = 0;
+
     [System.Serializable]
 
     public class Pool
@@ -28,7 +30,9 @@ public class ObjectPool : MonoBehaviour
             {
                 // 프리팹으로 오브젝트 생성
                 GameObject obj = Instantiate(pool.prefab);
-
+                // 생성 가능한 적의 수 판별을 위한 정수
+                if(obj.tag == "Enemy")
+                    createdEnemies++;
                 // 생성된 오브젝트 비활성화 상태로 큐에 삽입
                 obj.SetActive(false);
                 queue.Enqueue(obj);

@@ -10,7 +10,7 @@ public class CollisionSystem : MonoBehaviour
 
     private CharacterStatHandler statHandler;
     private float timeSinceLastOnDamage = float.MaxValue;
-
+    private Color oringColor;
 
     public event Action OnDamage;
     public event Action OnDeath;
@@ -18,12 +18,10 @@ public class CollisionSystem : MonoBehaviour
 
     public int CurrentLife { get; private set; }
 
-    private Animator animator;
-
     private void Awake()
     {
-        statHandler = GetComponent<CharacterStatHandler>();      
-        animator = GetComponent<Animator>();
+        oringColor = new Color(1f, 1f, 1f, 1f);
+        statHandler = GetComponent<CharacterStatHandler>();        
     }
 
     private void Start()
@@ -46,7 +44,6 @@ public class CollisionSystem : MonoBehaviour
 
     public bool ChangeLife()
     {
-        Debug.Log("CL");
         // 무적상태라면 life 변경 안함
         if (timeSinceLastOnDamage < lifeChangeDelay)
         {
@@ -62,6 +59,7 @@ public class CollisionSystem : MonoBehaviour
 
         if(this.tag == "Player")
             HealthManager.health--;
+
         if (HealthManager.health <= 0)
         {
             GameManager.isGameOver = true;
@@ -73,16 +71,57 @@ public class CollisionSystem : MonoBehaviour
             return true;
         }
 
-        OnDamage?.Invoke();
+        //OnDamage?.Invoke();
         isAttacked = true;
-        animator.SetTrigger("ChangeColler");
-
+        SetBlink();
         return true;
     }
 
     public void CallDeath()
     {        
         OnDeath?.Invoke();        
+    }
+
+    private void SetBlink()
+    {
+        if (isAttacked)
+        {
+            StartCoroutine("BlinkOnDamaged", gameObject);
+            isAttacked = true;
+        }
+        else
+        {
+            StopCoroutine("BlinkOnDamaged");
+            this.GetComponentInChildren<SpriteRenderer>().color = oringColor;
+            isAttacked = false;
+        }
+    }
+
+    private IEnumerator BlinkOnDamaged(GameObject ojb)
+    {
+        Color currentColor = oringColor;
+        int count = 0;
+
+        gameObject.GetComponentInChildren<SpriteRenderer>().color = currentColor;
+
+        // 전체 루틴이 2번 실행됨
+        while(count < 4)
+        {
+            count++;
+            // SpriteRenderer의 알파값에 따라서 줄이고 늘리고 반복
+            while(ojb.GetComponentInChildren<SpriteRenderer>().color.a > 0f)
+            {
+                currentColor.a -= 0.1f;
+                gameObject.GetComponentInChildren<SpriteRenderer>().color = currentColor;
+            }
+            yield return new WaitForSeconds(0.1f);
+            while (gameObject.GetComponentInChildren<SpriteRenderer>().color.a < 1f)
+            {
+                currentColor.a += 0.1f;
+                gameObject.GetComponentInChildren<SpriteRenderer>().color = currentColor;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
 

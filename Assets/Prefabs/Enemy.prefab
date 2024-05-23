@@ -258,10 +258,10 @@ GameObject:
   - component: {fileID: 4620905617570055819}
   - component: {fileID: 1484856348803232942}
   - component: {fileID: 1975238379433041616}
+  - component: {fileID: 2803790156806999576}
   - component: {fileID: 4118239619386210579}
   - component: {fileID: 5735695923113163498}
   - component: {fileID: -6614797179789957110}
-  - component: {fileID: 2803790156806999576}
   - component: {fileID: 5552430314630346047}
   - component: {fileID: 9164232719453252228}
   m_Layer: 6
@@ -376,9 +376,23 @@ MonoBehaviour:
   baseStat:
     statChangeType: 2
     life: 1
-    speed: 7
+    speed: 5
     attackSO: {fileID: 11400000, guid: e7520d8f18daeaa4eaf82230175fe23c, type: 2}
   statModifiers: []
+--- !u!114 &2803790156806999576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8976277410992919216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b464da5e36974e41934b126efd7d0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  characterRenderer: {fileID: 8287218811443854408}
 --- !u!114 &4118239619386210579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,26 +426,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8976277410992919216}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75f564bb50f4a1840818c1e1f32b6b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 443013152718759478}
---- !u!114 &2803790156806999576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8976277410992919216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b464da5e36974e41934b126efd7d0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTag: Player
-  characterRenderer: {fileID: 8287218811443854408}
 --- !u!114 &5552430314630346047
 MonoBehaviour:
   m_ObjectHideFlags: 0
