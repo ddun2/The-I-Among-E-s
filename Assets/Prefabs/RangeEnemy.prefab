@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 2951085138887709810}
   m_Layer: 6
   m_Name: RangeEnemy
-  m_TagString: Enemy
+  m_TagString: Enemy(Ranged)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

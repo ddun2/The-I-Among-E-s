@@ -7,15 +7,13 @@ public class ContactEnemyController : EnemyController
     private bool isCollidingWithTarget;
 
     [SerializeField] private SpriteRenderer characterRenderer;
-
-    //CollisionSystem collisionSystem;
+        
     private CollisionSystem targetCollisionSystem;
     private IAEMovement targetMovement;
 
     protected override void Start()
     {
-        base.Start();
-        //collisionSystem = GetComponent<CollisionSystem>();
+        base.Start();    
     }
 
     protected override void FixedUpdate()

@@ -48,6 +48,7 @@ public class DestroyCharacter : MonoBehaviour
         {
             MonsterPool obj = GameManager.Instance.monsterPool;
             obj.EnemyDeath();
+            GameManager.Instance.GetScore(gameObject);
             gameObject.SetActive(false);
         }
     }    
