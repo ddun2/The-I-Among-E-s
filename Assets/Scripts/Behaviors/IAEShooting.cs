@@ -48,7 +48,6 @@ public class IAEShooting : MonoBehaviour
         obj.transform.position = projectileSpawnPosition.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
         attackController.OnAttack(RotateVector2(aimDirection, angle), attackSO);
-
     }
 
     private Vector2 RotateVector2(Vector2 v, float angle)

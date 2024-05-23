@@ -94,7 +94,7 @@ public class ProjectileController : MonoBehaviour
     {
         if(createFx)
         {
-            //TODO : 이펙트 추가하기
+            //TODO : 이펙트 추가하기!!!!!!
         }
         
         gameObject.SetActive(false);
