@@ -41,9 +41,9 @@ Unity를 활용한 2D TopDownView 슈팅 게임
   - [충돌 처리](https://github.com/ddun2/The-I-Among-E-s/wiki/%EC%B6%A9%EB%8F%8C-%EC%B2%98%EB%A6%AC)
   - [생성 및 소멸](https://github.com/ddun2/The-I-Among-E-s/wiki/%EB%AA%AC%EC%8A%A4%ED%84%B0-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%86%8C%EB%A9%B8)
 - ## UI
-  - 시작 화면 -> mbti 입력하고 판별하는부분
-  - 게임 화면 -> 점수 계산 및 표시
-  - 게임오버 -> 재시작 종료
+  - [시작 화면](https://github.com/wow245/The-I-Among-E-s/wiki/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C-%EC%9E%85%EB%AC%B8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%E2%80%90-The%E2%80%90I%E2%80%90Among%E2%80%90E%E2%80%90s) -> mbti 입력하고 판별하는부분
+  - [게임 화면](https://github.com/wow245/The-I-Among-E-s/wiki/%EB%A9%94%EC%9D%B8-%EC%94%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0) -> 점수 계산 및 표시
+  - [게임오버](https://github.com/wow245/The-I-Among-E-s/wiki/%EA%B2%8C%EC%9E%84%EC%98%A4%EB%B2%84%EC%B0%BD,-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%B0%BD,-%ED%98%84%EC%9E%AC,-%EC%B5%9C%EA%B3%A0-%EC%A0%90%EC%88%98%EA%B5%AC%ED%98%84) -> 재시작 종료
 
 # ⚙️주요 기술
 - Singleton
