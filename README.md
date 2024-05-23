@@ -7,9 +7,11 @@
 "하루 종일 집에 있고 싶어!"
 
 집으로 찾아온 외향인들의 연락을 피해 살아남기
+<p align="center">
+<img src="https://github.com/ddun2/The-I-Among-E-s/assets/67744902/7c7b47a6-b7d3-4a3a-8b6c-b0e58b495e4e" width="400" height="300">
 
-<img src="https://github.com/ddun2/The-I-Among-E-s/assets/67744902/7c7b47a6-b7d3-4a3a-8b6c-b0e58b495e4e" width="450" height="300">
-<img src="https://github.com/ddun2/The-I-Among-E-s/assets/67744902/cd70fdbe-afe4-4260-a822-cc13ed905a50" width="450" height="300">
+<img src="https://github.com/ddun2/The-I-Among-E-s/assets/67744902/cd70fdbe-afe4-4260-a822-cc13ed905a50" width="400" height="300">
+</p>
 
 # 📢프로젝트 소개
 Unity를 활용한 2D TopDownView 슈팅 게임
