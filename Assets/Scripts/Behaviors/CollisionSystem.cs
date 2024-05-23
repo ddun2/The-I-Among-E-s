@@ -62,6 +62,10 @@ public class CollisionSystem : MonoBehaviour
 
         if(this.tag == "Player")
             HealthManager.health--;
+        if (HealthManager.health <= 0)
+        {
+            GameManager.isGameOver = true;
+        }
 
         if (CurrentLife <= 0)
         {
