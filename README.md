@@ -1,5 +1,5 @@
 # 🎮The I Among E's
-게임 소개 작성하기 
+게임 소개 작성하기 & 이미지 추가
 # 📢프로젝트 소개
 Unity를 활용한 2D TopDownView 슈팅 게임
 
@@ -35,6 +35,7 @@ Unity를 활용한 2D TopDownView 슈팅 게임
 
 # ⚙️주요 기술
 - Singleton
+  - 내용추가하기 or 위키 작성
 - Scriptable Object
 - Object Pool
 
