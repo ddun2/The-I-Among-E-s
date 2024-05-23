@@ -45,10 +45,14 @@ Unity를 활용한 2D TopDownView 슈팅 게임
 
 # ⚙️주요 기술
 - Singleton
-  - 내용추가하기 or 위키 작성
+  - UI 관련 처리나 플레이어의 정보 등을 모든 스크립트에서 공유하기 위해 GameManager 생성시 활용
 - Scriptable Object
+  - 플레이어와 몬스터가 가지는 공격 관련 정보를 관리하기 위해 활용
+  - 다수의 몬스터가 생성되지만 가지고 있는 정보를 중복 생성하지 않는 장점을 가짐
 - Object Pool
+  - 지속적으로 생성되고 소멸되는 몬스터와 발사체를 효율적으로 관리하기 위해 활용
 
 # 🔔링크
-팀 노션 페이지
+[팀 노션 페이지](https://teamsparta.notion.site/I-9-a05dec2947684e5985128c1bb04ab16e)
+
 UML 와이어 프레임 등등 추가
